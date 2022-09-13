@@ -1,3 +1,3 @@
 # Web-Dev-Quiz/change
 
-Dan and Tibor
+Dan and Tibor first project
