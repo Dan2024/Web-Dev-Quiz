@@ -1,3 +1,3 @@
-# Web-Dev-Quiz
+# Web-Dev-Quiz/change
 
-Dan
+Dan and Tibor
