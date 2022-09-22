@@ -10,7 +10,7 @@ datasource db {
 
 model User {
   id         Int      @id @default(autoincrement())
-  googleId   Int
+  googleId   Int      @unique
   name       String   @db.VarChar(100)
   email      String   @db.VarChar(200)
   password   String?  @db.VarChar(200)
@@ -23,12 +23,12 @@ model User {
 }
 
 model Question {
-  id        Int        @id @default(autoincrement())
-  text      String
-  category  Category[]
-  answer    Answer?
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id         Int        @id @default(autoincrement())
+  text       String
+  categories Category[]
+  answer     Answer?
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 }
 
 model Answer {
@@ -49,11 +49,11 @@ model Option {
   answer     Answer?
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
-  categoryId Int
 }
 
 model Category {
   id        Int        @id @default(autoincrement())
+  text      String     @db.VarChar(100)
   questions Question[]
   options   Option[]
 }

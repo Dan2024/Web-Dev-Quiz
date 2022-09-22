@@ -32,5 +32,8 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma",
     "editor.formatOnSave": true
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }
