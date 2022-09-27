@@ -10,14 +10,15 @@ datasource db {
 
 model User {
   id         Int      @id @default(autoincrement())
-  googleId   Int      @unique
+  googleId   String   @unique
   name       String   @db.VarChar(100)
   email      String   @db.VarChar(200)
+  img        String?
   password   String?  @db.VarChar(200)
-  score      Int?
-  wins       Int?
-  correctAns Int?
-  wrongAns   Int?
+  score      Int?     @default(0)
+  wins       Int?     @default(0)
+  correctAns Int?     @default(0)
+  wrongAns   Int?     @default(0)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

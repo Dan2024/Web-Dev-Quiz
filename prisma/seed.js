@@ -1,13 +1,12 @@
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+import dbClient from '../src/utils/dbClient.js'
 
 async function seed() {
-  const categoryA = await prisma.category.create({
+  const categoryA = await dbClient.category.create({
     data: { text: 'A' },
   })
 
   for (let i = 1; i <= 10; i++) {
-    await prisma.question.create({
+    await dbClient.question.create({
       data: {
         text: `Question ${i}`,
         categories: {
@@ -16,7 +15,7 @@ async function seed() {
       },
     })
 
-    await prisma.option.create({
+    await dbClient.option.create({
       data: {
         text: `Option ${i}`,
         categories: {
@@ -25,7 +24,7 @@ async function seed() {
       },
     })
 
-    await prisma.answer.create({
+    await dbClient.answer.create({
       data: {
         text: `Answer ${i}`,
         questionId: i,
@@ -41,5 +40,5 @@ seed()
     process.exit(1)
   })
   .finally(async () => {
-    await prisma.$disconnect()
+    await dbClient.$disconnect()
   })
