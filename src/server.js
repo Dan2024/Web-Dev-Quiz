@@ -6,6 +6,7 @@ import cors from 'cors'
 import './services/passport.js'
 import authRoute from './routes/auth.js'
 import userRoute from './routes/user.js'
+import usersRoute from './routes/users.js'
 import questionRoute from './routes/question.js'
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -36,6 +37,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use('/auth', authRoute)
 app.use('/user', userRoute)
+app.use('/users', usersRoute)
 app.use('/question', questionRoute)
 
 const port = 4000
