@@ -3,7 +3,7 @@ import dbClient from '../utils/dbClient.js';
 export default async function getQuestions(category, numOfQuestions) {
 	const questionsByCategory = await dbClient.question.findMany({
 		where: { category: category },
-		include: { answer: true },
+		include: { answer: true, options: true },
 	});
 
 	const shuffledQuestions = questionsByCategory.sort(() => 0.5 - Math.random());
