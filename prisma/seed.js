@@ -45,7 +45,7 @@ async function seed() {
 	// creating 10 questions assigned to catergory A with associated answer and options
 
 	const categoryA = await dbClient.category.create({
-		data: { text: 'nodeJS' },
+		data: { text: 'Node.Js' },
 	});
 
 	for (let i = 1; i <= questions.length - 1; i++) {
