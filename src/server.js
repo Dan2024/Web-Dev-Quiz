@@ -9,6 +9,7 @@ import userRoute from './routes/user.js';
 import usersRoute from './routes/users.js';
 import questionRoute from './routes/question.js';
 import * as dotenv from 'dotenv';
+import { getNodeQuestions } from '../src/puppeteer/getNodeJS_questions.js';
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ const config = {
 	COOKIE_KEY_1: process.env.COOKIE_KEY_1,
 	COOKIE_KEY_2: process.env.COOKIE_KEY_2,
 };
+
+getNodeQuestions();
 
 const app = express();
 app.use(helmet());
