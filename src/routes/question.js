@@ -1,8 +1,8 @@
-import { Router } from 'express'
-import { getQuestionsByCategory } from '../controllers/question.js'
+import { Router } from 'express';
+import { getQuestionsByCategory } from '../controllers/question.js';
 
-const router = Router()
+const router = Router();
 
-router.get('/', getQuestionsByCategory)
+router.get('/:category', getQuestionsByCategory);
 
-export default router
+export default router;
